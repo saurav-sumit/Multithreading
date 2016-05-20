@@ -41,7 +41,7 @@ class Incrementer implements Runnable {
 
 }
 
-public class AtomicIntegerTest {
+public class AtomicIntegerExample {
 
     public static void main(String[] args) {
         Incrementer inc = new Incrementer();
@@ -50,7 +50,7 @@ public class AtomicIntegerTest {
         try {
             tA.join();
         } catch (InterruptedException ex) {
-            Logger.getLogger(AtomicIntegerTest.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AtomicIntegerExample.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("final value " + inc.atomicnumber);
     }
