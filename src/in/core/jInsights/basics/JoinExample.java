@@ -33,7 +33,10 @@ public class JoinExample {
         tA.start();
 
         try {
-            tA.join();
+            // other thread join tA after it completes its execution 
+            // tA.join();
+            // other thread join tA after 1000 millisecond
+            tA.join(1000);
 
         } catch (InterruptedException ex) {
             Logger.getLogger(JoinExample.class.getName()).log(Level.SEVERE, null, ex);

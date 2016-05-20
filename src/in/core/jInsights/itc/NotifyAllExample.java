@@ -74,10 +74,6 @@ public class NotifyAllExample {
         tA.start();
         tB.start();
         tC.start();
-
-//        new Reader(calc).start();
-//        new Reader(calc).start();
-//        new Reader(calc).start();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {

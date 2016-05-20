@@ -12,7 +12,7 @@ package in.core.jInsights.sync;
  */
 class TaskA implements Runnable {
 
-    volatile boolean running = true;
+   volatile boolean running = true;
     // boolean running = true;
 
     @Override
@@ -33,7 +33,7 @@ public class VolatileExample {
         tA.start();
         Thread.sleep(1000);
         task.running = false;
-        System.out.println("keepRunning set to false.");
+        System.out.println("running flag is set to false.");
     }
 
 }

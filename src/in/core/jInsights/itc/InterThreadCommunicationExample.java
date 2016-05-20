@@ -36,6 +36,7 @@ public class InterThreadCommunicationExample {
             try {
                 System.out.println(Thread.currentThread().getName() + " thread is waiting for Adder's notification ...");
                 adder.wait();
+                System.out.println(Thread.currentThread().getName()+" is notifed  ....");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
