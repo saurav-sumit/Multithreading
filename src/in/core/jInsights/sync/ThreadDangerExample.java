@@ -25,7 +25,7 @@ class Incrementer implements Runnable {
     }
 
     public void increment() {
-    // public synchronized void increment() {
+        // public synchronized void increment() {
         try {
 
             Thread.sleep(100);

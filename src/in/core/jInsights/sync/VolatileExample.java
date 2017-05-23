@@ -5,6 +5,9 @@
  */
 package in.core.jInsights.sync;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sumit kumar saurav<sumitk@cdac.in>
@@ -19,7 +22,12 @@ class TaskA implements Runnable {
     public void run() {
         int count = 0;
         while (running) {
-            count++;
+            try {
+                Thread.sleep(100);
+                count++;
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TaskA.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         System.out.println("Thread terminated." + count);
     }
@@ -32,7 +40,8 @@ public class VolatileExample {
         Thread tA = new Thread(task);
         tA.start();
         Thread.sleep(1000);
-        task.running = false;
+        
+       task.running = false;
         System.out.println("running flag is set to false.");
     }
 

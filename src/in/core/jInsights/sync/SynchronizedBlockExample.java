@@ -21,7 +21,7 @@ class Counter implements Runnable {
     public void run() {
         // Try this with and without synchronized 
        // synchronized (this) {
-            for (int i = 0; i < 50; i++) {
+            for (int i =1; i <=50; i++) {
                 
                 count++;
 
@@ -32,7 +32,7 @@ class Counter implements Runnable {
                     Logger.getLogger(Counter.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-       // }
+       // } 
     }
 
     public int getCount() {

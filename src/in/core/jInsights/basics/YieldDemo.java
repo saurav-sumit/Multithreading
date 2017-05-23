@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package in.core.jInsights.uc;
+package in.core.jInsights.basics;
 
+import in.core.jInsights.uc.*;
 import java.lang.Thread.State;
 
 /**

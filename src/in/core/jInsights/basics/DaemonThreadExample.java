@@ -39,10 +39,10 @@ class NetworkStatus implements Runnable {
 public class DaemonThreadExample {
 
     public static void main(String[] args) throws InterruptedException {
-        NetworkStatus ns = new NetworkStatus("XXX.XX.X.X");
+        NetworkStatus ns = new NetworkStatus("10.180.12.65");
         Thread t = new Thread(ns);
         // To make user thread to daemon thread 
-        t.setDaemon(true);
+        t.setDaemon(false);
         t.start();
         Thread.sleep(500);
         System.out.println(Thread.currentThread().getName() + " thread is [user thread] completed .... and as no user thread is running ,daemon thread  is terminted by the JVM......");

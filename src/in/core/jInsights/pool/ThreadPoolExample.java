@@ -42,7 +42,7 @@ public class ThreadPoolExample {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(5);
         for (int i = 1; i <= 10; i++) {
-            Worker worker = new Worker(" Hello employee "+i);
+            Worker worker = new Worker("Hello employee ["+i+"]");
             executor.execute(worker);// calling execute method of ExecutorService
         }
         executor.shutdown();

@@ -71,6 +71,7 @@ public class NotifyAllExample {
         Thread tA = new Thread(reader, "Reader-X");
         Thread tB = new Thread(reader, "Reader-Y");
         Thread tC = new Thread(reader, "Reader-Z");
+       
         tA.start();
         tB.start();
         tC.start();

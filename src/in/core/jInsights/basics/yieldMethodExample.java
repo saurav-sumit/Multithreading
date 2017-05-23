@@ -14,8 +14,8 @@ class TaskZ implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 1; i <=10; i++) {
-            if (i % 2 == 0) {
+        for (int i = 1; i <= 10; i++) {
+            if (i % 3 == 0) {
                 System.out.println(Thread.currentThread().getName() + " is executing ... i=" + i);
                 Thread.yield();
             }
@@ -32,7 +32,7 @@ public class yieldMethodExample {
         Thread tB = new Thread(taskZ);
         Thread tC = new Thread(taskZ);
         tA.setPriority(9);
-        tB.setPriority(4);
+        tB.setPriority(9);
         tC.setPriority(7);
         tA.start();
         tB.start();

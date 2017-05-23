@@ -13,7 +13,6 @@ class Incrementer implements Runnable {
         for (int i = 0; i < 50; i++) {
             IncrementAtomicNumber();
         }
-
     }
 
     public void IncrementAtomicNumber() {
@@ -28,7 +27,6 @@ class Incrementer implements Runnable {
     public AtomicInteger getIncrementedAtomicNumber() {
         return atomicnumber;
     }
-
 }
 
 public class AtomicIntegerExample {
@@ -44,5 +42,4 @@ public class AtomicIntegerExample {
         }
         System.out.println("final value " + inc.atomicnumber);
     }
-
 }

@@ -1,13 +1,18 @@
 package in.core.jInsights.itc;
 
-class Adder implements Runnable {
+class Summation implements Runnable {
 
     private int total;
+    private final int num;
+
+    public Summation(int num) {
+        this.num = num;
+    }
 
     @Override
     public void run() {
         synchronized (this) {
-            for (int i = 1; i <= 50; i++) {
+            for (int i = 1; i <= num; i++) {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -29,19 +34,19 @@ class Adder implements Runnable {
 public class InterThreadCommunicationExample {
 
     public static void main(String[] args) {
-        Adder adder = new Adder();
-        Thread tA = new Thread(adder);
+        Summation sum = new Summation(50);
+        Thread tA = new Thread(sum);
         tA.start();
-        synchronized (adder) {
+        synchronized (sum) {
             try {
-                System.out.println(Thread.currentThread().getName() + " thread is waiting for Adder's notification ...");
-                adder.wait();
-                System.out.println(Thread.currentThread().getName()+" is notifed  ....");
+                System.out.println(Thread.currentThread().getName() + " thread is waiting for notification ...");
+                sum.wait();
+                System.out.println(Thread.currentThread().getName() + " is notifed  ....");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println("Total is " + adder.getTotal());
+        System.out.println(Thread.currentThread().getName()+ "Total is " + sum.getTotal());
     }
 
 }

@@ -22,7 +22,7 @@ public class DeadLockExample {
             while (true) {
                 synchronized (str1) {
                     synchronized (str2) {
-                        System.out.println(str1 + " " + str2);
+                        System.out.println(Thread.currentThread().getName()+" "+str1 + " " + str2);
                     }
                 }
             }
@@ -37,7 +37,7 @@ public class DeadLockExample {
             while (true) {
                 synchronized (str2) {
                     synchronized (str1) {
-                        System.out.println(str2 + " " + str1);
+                        System.out.println(Thread.currentThread().getName()+" "+str2 + " " + str1);
                     }
                 }
             }
